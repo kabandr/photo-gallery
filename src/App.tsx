@@ -15,7 +15,7 @@ export interface PhotoI {
 const App = () => {
   const [photos, setPhotos] = useState<PhotoI[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [itemsPerPage] = useState(15);
   const [searchInput, setSearchInput] = useState("");
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -58,6 +58,7 @@ const App = () => {
   return (
     <Grommet>
       <div className="App">
+        <h1 className="app__title">Photo Gallery</h1>
         <Box style={{ margin: "0.5rem" }}>
           <TextInput
             placeholder="Search for title"
