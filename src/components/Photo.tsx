@@ -1,10 +1,4 @@
-interface PhotoProps {
-  photo: {
-    id: number;
-    url: string;
-    title: string;
-  };
-}
+import { PhotoProps } from "../types";
 
 const Photo = ({ photo }: PhotoProps) => {
   return (

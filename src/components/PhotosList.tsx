@@ -1,14 +1,5 @@
 import Photo from "./Photo";
-
-interface Photo {
-  id: number;
-  url: string;
-  title: string;
-}
-
-interface PhotosListProps {
-  photos: Photo[];
-}
+import { PhotosListProps } from "../types";
 
 const PhotosList = ({ photos }: PhotosListProps) => {
   return (

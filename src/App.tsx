@@ -1,28 +1,21 @@
 import { useEffect, useState } from "react";
 import { Box, Pagination, Grommet, TextInput } from "grommet";
 import PhotosList from "./components/PhotosList";
+import { Photo } from "./types";
 
 const baseUrl = "https://jsonplaceholder.typicode.com/photos";
 
-export interface PhotoI {
-  albumId: number;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
-
 const App = () => {
-  const [photos, setPhotos] = useState<PhotoI[]>([]);
+  const [photos, setPhotos] = useState<Photo[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(15);
+  const [itemsPerPage] = useState(10);
   const [searchInput, setSearchInput] = useState("");
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentData = photos.slice(startIndex, endIndex);
 
-  const filteredPhotos = photos.filter((photo: PhotoI) =>
+  const filteredPhotos = photos.filter((photo: Photo) =>
     JSON.stringify(photo.title)
       .toLowerCase()
       .includes(searchInput.toLowerCase())
