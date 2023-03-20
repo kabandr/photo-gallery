@@ -1,3 +1,4 @@
+import React from "react";
 import { PhotoProps } from "../types";
 
 const Photo = ({ photo }: PhotoProps) => {

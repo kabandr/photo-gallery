@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Pagination, Grommet, TextInput } from "grommet";
 import PhotosList from "./components/PhotosList";
 import { Photo } from "./types";
